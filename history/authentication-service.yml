@@ -1,7 +1,7 @@
 url: https://api.estimation.pk/health/auth
-status: down
-code: 0
-responseTime: 0
-lastUpdated: 2025-10-01T06:12:27.119Z
+status: up
+code: 503
+responseTime: 271
+lastUpdated: 2025-10-01T22:10:07.175Z
 startTime: 2025-10-01T06:12:27.083Z
 generator: Upptime <https://github.com/upptime/upptime>
