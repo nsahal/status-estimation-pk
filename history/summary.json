@@ -5,18 +5,18 @@
     "icon": "https://estimation.pk/favicon.ico",
     "slug": "estimation-pk-website",
     "status": "down",
-    "uptime": "3.09%",
-    "uptimeDay": "3.09%",
-    "uptimeWeek": "3.09%",
-    "uptimeMonth": "3.09%",
-    "uptimeYear": "3.09%",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-10-01": 0
+      "2025-10-01": 180
     }
   },
   {
@@ -24,6 +24,26 @@
     "url": "https://app.estimation.pk",
     "icon": "https://estimation.pk/favicon.ico",
     "slug": "estimation-pk-app",
+    "status": "down",
+    "uptime": "0.10%",
+    "uptimeDay": "0.10%",
+    "uptimeWeek": "0.10%",
+    "uptimeMonth": "0.10%",
+    "uptimeYear": "0.10%",
+    "time": 192,
+    "timeDay": 192,
+    "timeWeek": 192,
+    "timeMonth": 192,
+    "timeYear": 192,
+    "dailyMinutesDown": {
+      "2025-10-01": 180
+    }
+  },
+  {
+    "name": "API Health Check",
+    "url": "https://api.estimation.pk/health",
+    "icon": "https://icons.duckduckgo.com/ip3/api.estimation.pk.ico",
+    "slug": "api-health-check",
     "status": "down",
     "uptime": "0.00%",
     "uptimeDay": "0.00%",
@@ -36,27 +56,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-10-01": 0
-    }
-  },
-  {
-    "name": "API Health Check",
-    "url": "https://api.estimation.pk/health",
-    "icon": "https://icons.duckduckgo.com/ip3/api.estimation.pk.ico",
-    "slug": "api-health-check",
-    "status": "down",
-    "uptime": "3.43%",
-    "uptimeDay": "3.43%",
-    "uptimeWeek": "3.43%",
-    "uptimeMonth": "3.43%",
-    "uptimeYear": "3.43%",
-    "time": 0,
-    "timeDay": 0,
-    "timeWeek": 0,
-    "timeMonth": 0,
-    "timeYear": 0,
-    "dailyMinutesDown": {
-      "2025-10-01": 0
+      "2025-10-01": 180
     }
   },
   {
@@ -65,18 +65,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/api.estimation.pk.ico",
     "slug": "api-calculate-quote",
     "status": "down",
-    "uptime": "0.31%",
-    "uptimeDay": "0.31%",
-    "uptimeWeek": "0.31%",
-    "uptimeMonth": "0.31%",
-    "uptimeYear": "0.31%",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-10-01": 0
+      "2025-10-01": 180
     }
   },
   {
@@ -85,18 +85,18 @@
     "icon": "https://icons.duckduckgo.com/ip3/api.estimation.pk.ico",
     "slug": "database-health",
     "status": "down",
-    "uptime": "2.84%",
-    "uptimeDay": "2.84%",
-    "uptimeWeek": "2.84%",
-    "uptimeMonth": "2.84%",
-    "uptimeYear": "2.84%",
+    "uptime": "0.00%",
+    "uptimeDay": "0.00%",
+    "uptimeWeek": "0.00%",
+    "uptimeMonth": "0.00%",
+    "uptimeYear": "0.00%",
     "time": 0,
     "timeDay": 0,
     "timeWeek": 0,
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-10-01": 0
+      "2025-10-01": 180
     }
   },
   {
@@ -116,7 +116,7 @@
     "timeMonth": 0,
     "timeYear": 0,
     "dailyMinutesDown": {
-      "2025-10-01": 0
+      "2025-10-01": 180
     }
   }
 ]
