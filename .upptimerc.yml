@@ -1,36 +1,104 @@
-# Change these first
-owner: upptime # Your GitHub organization or username, where this repository lives
-repo: upptime # The name of this repository
+# Official configuration file for Upptime
+# https://upptime.js.org/docs/configuration
+
+owner: nsahal # Your GitHub username
+repo: status-estimation-pk # Repository name
 
 sites:
-  - name: Google
-    url: https://www.google.com
-  - name: Wikipedia
-    url: https://en.wikipedia.org
-  - name: Hacker News
-    url: https://news.ycombinator.com
-  - name: Test Broken Site
-    url: https://thissitedoesnotexist.koj.co
-  - name: IPv6 test
-    url: forwardemail.net
-    port: 80
-    check: "tcp-ping"
-    ipv6: true
+  - name: Estimation.pk Website
+    url: https://estimation.pk
+    icon: https://estimation.pk/favicon.ico
+    
+  - name: Estimation.pk App
+    url: https://app.estimation.pk
+    icon: https://estimation.pk/favicon.ico
+    expectedStatusCodes:
+      - 200
+      - 301
+    
+  - name: API Health Check
+    url: https://api.estimation.pk/health
+    method: GET
+    expectedStatusCodes:
+      - 200
+      - 503  # Allow degraded status
+    
+  - name: API Calculate Quote
+    url: https://api.estimation.pk/api/v1/calculate-quote
+    method: POST
+    headers:
+      - "Content-Type: application/json"
+    body: '{"boxType":"tuck-top-snap-lock","length":4,"width":3,"height":2,"material":"cardboard","gsm":300,"printing":{"cmyk":1,"pantone":0,"metallic":0},"insidePrinting":{"cmyk":0,"pantone":0,"metallic":0},"quantity":100,"features":[],"featureAreas":{},"vendorProfit":20,"shippingOption":"standard","shippingCountry":"USA"}'
+    expectedStatusCodes:
+      - 200
+    
+  - name: Database Health
+    url: https://api.estimation.pk/health/database
+    method: GET
+    expectedStatusCodes:
+      - 200
+      - 503
+    
+  - name: Authentication Service
+    url: https://api.estimation.pk/health/auth
+    method: GET
+    expectedStatusCodes:
+      - 200
+      - 503
 
 status-website:
-  # Add your custom domain name, or remove the `cname` line if you don't have a domain
-  # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
-  cname: demo.upptime.js.org
-  # baseUrl: /your-repo-name
-  logoUrl: https://raw.githubusercontent.com/upptime/upptime.js.org/master/static/img/icon.svg
-  name: Upptime
-  introTitle: "**Upptime** is the open-source uptime monitor and status page, powered entirely by GitHub."
-  introMessage: This is a sample status page which uses **real-time** data from our [GitHub repository](https://github.com/upptime/upptime). No server required — just GitHub Actions, Issues, and Pages. [**Get your own for free**](https://github.com/upptime/upptime)
+  # Add your custom domain here
+  cname: status.estimation.pk
+  
+  # Uncomment to use a custom logo
+  # logoUrl: https://estimation.pk/logo.png
+  
+  name: Estimation.pk Status
+  
+  introTitle: "**Estimation.pk** System Status"
+  introMessage: Real-time status and uptime monitoring for Estimation.pk services.
+  
   navbar:
     - title: Status
       href: /
     - title: GitHub
       href: https://github.com/$OWNER/$REPO
+    - title: Main Site
+      href: https://estimation.pk
 
-# Upptime also supports notifications, assigning issues, and more
-# See https://upptime.js.org/docs/configuration
+# Commit messages
+commitMessages:
+  readmeContent: ":pencil: Update summary in README [skip ci] [upptime]"
+  summaryJson: ":card_file_box: Update status summary [skip ci] [upptime]"
+  statusChange: "$EMOJI $SITE_NAME is $STATUS ($RESPONSE_CODE in $RESPONSE_TIME ms) [skip ci] [upptime]"
+  graphsUpdate: ":bento: Update graphs [skip ci] [upptime]"
+
+# Schedule - Check every 5 minutes
+workflowSchedule:
+  graphs: "0 0 * * *"  # Update graphs daily
+  responseTime: "0 23 * * *"  # Response time daily
+  staticSite: "0 1 * * *"  # Update static site daily
+  summary: "0 0 * * *"  # Summary daily
+  updateTemplate: "0 0 * * *"  # Template updates daily
+  updates: "0 3 * * *"  # Check for updates daily
+  uptime: "*/5 * * * *"  # Check uptime every 5 minutes
+
+# User agent for requests
+user-agent: upptime-bot
+
+# Notification settings (optional - uncomment to enable)
+# notifications:
+#   - type: slack
+#     webhook-url: $SLACK_WEBHOOK_URL
+#   - type: discord
+#     webhook-url: $DISCORD_WEBHOOK_URL
+
+# Assignment settings
+assignees:
+  - nsahal
+
+# Default maximum response time (in ms)
+maxResponseTime: 5000
+
+# Add delay between requests (in ms) to avoid rate limiting
+delay: 1000
