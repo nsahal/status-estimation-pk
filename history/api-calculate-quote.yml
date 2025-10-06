@@ -1,7 +1,7 @@
 url: https://api.estimation.pk/api/v1/calculate-quote
 status: down
 code: 401
-responseTime: 250
-lastUpdated: 2025-10-05T23:08:13.403Z
+responseTime: 233
+lastUpdated: 2025-10-06T23:09:02.463Z
 startTime: 2025-10-01T06:12:20.595Z
 generator: Upptime <https://github.com/upptime/upptime>
