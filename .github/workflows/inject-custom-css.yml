@@ -1,0 +1,40 @@
+name: Inject Custom CSS
+on:
+  workflow_run:
+    workflows: ["Static Site CI"]
+    types:
+      - completed
+
+jobs:
+  inject-css:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Checkout gh-pages
+        uses: actions/checkout@v4
+        with:
+          ref: gh-pages
+          token: ${{ secrets.GH_PAT || github.token }}
+      
+      - name: Inject custom CSS into HTML
+        run: |
+          # Add custom CSS link to index.html before </head>
+          sed -i 's|</head>|<link href=https://status.estimation.pk/custom.css rel=stylesheet></head>|' index.html
+          
+          # Remove "powered by Upptime" footer
+          sed -i 's|This page is <a href=https://github.com/nsahal/status-estimation-pk>open source</a>, powered by <a href=https://upptime.js.org>Upptime</a>|<a href=https://github.com/nsahal/status-estimation-pk>Open source</a> status page|' index.html
+          
+          echo "Custom CSS injected and branding removed"
+          
+      - name: Commit changes
+        run: |
+          git config --local user.email "73812536+upptime-bot@users.noreply.github.com"
+          git config --local user.name "Upptime Bot"
+          git add index.html
+          git diff --staged --quiet || git commit -m ":lipstick: Inject custom CSS and remove branding [skip ci]"
+          
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_PAT || github.token }}
+          branch: gh-pages
