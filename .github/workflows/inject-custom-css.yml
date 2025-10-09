@@ -16,15 +16,15 @@ jobs:
           ref: gh-pages
           token: ${{ secrets.GH_PAT || github.token }}
       
-      - name: Inject custom CSS into HTML
+      - name: Inject custom CSS and remove footer
         run: |
           # Add custom CSS link to index.html before </head>
           sed -i 's|</head>|<link href=https://status.estimation.pk/custom.css rel=stylesheet></head>|' index.html
           
-          # Remove "powered by Upptime" footer
-          sed -i 's|This page is <a href=https://github.com/nsahal/status-estimation-pk>open source</a>, powered by <a href=https://upptime.js.org>Upptime</a>|<a href=https://github.com/nsahal/status-estimation-pk>Open source</a> status page|' index.html
+          # Completely remove the footer element
+          sed -i 's|<footer class=svelte-jbr799>.*</footer>||' index.html
           
-          echo "Custom CSS injected and branding removed"
+          echo "Custom CSS injected and footer removed"
           
       - name: Commit changes
         run: |
