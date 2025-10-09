@@ -41,9 +41,9 @@ status-website:
   # Add your custom domain here
   cname: status.estimation.pk
   
-  # Custom logo and favicon (use local assets for better performance)
-  logoUrl: /assets/logo.png
-  favicon: /assets/favicon.ico
+  # Custom logo and favicon (Upptime copies from assets/* to root of gh-pages)
+  logoUrl: https://status.estimation.pk/logo.png
+  favicon: https://status.estimation.pk/favicon.ico
   
   name: Estimation.pk Status
   
@@ -59,8 +59,8 @@ status-website:
   # Custom theme settings
   theme: dark
   
-  # Custom CSS (must be full URL after GitHub Pages builds it)
-  customCSS: https://status.estimation.pk/assets/custom.css
+  # Custom CSS - Files from assets/* are copied to root of gh-pages
+  customCSS: https://status.estimation.pk/custom.css
   
   # Remove Upptime branding
   skipPoweredByUpptime: true
