@@ -41,8 +41,9 @@ status-website:
   # Add your custom domain here
   cname: status.estimation.pk
   
-  # Uncomment to use a custom logo
-  # logoUrl: https://estimation.pk/logo.png
+  # Custom logo and favicon (use local assets for better performance)
+  logoUrl: /assets/logo.png
+  favicon: /assets/favicon.ico
   
   name: Estimation.pk Status
   
@@ -52,10 +53,18 @@ status-website:
   navbar:
     - title: Status
       href: /
-    - title: GitHub
-      href: https://github.com/$OWNER/$REPO
     - title: Main Site
       href: https://estimation.pk
+  
+  # Custom theme settings
+  theme: dark
+  
+  # Custom CSS
+  customCSS: /assets/custom.css
+  
+  # Remove Upptime branding
+  skipPoweredByUpptime: true
+  skipDescriptionWithSummary: true
 
 # Commit messages
 commitMessages:
