@@ -281,19 +281,18 @@ section svg + div {
 }
 
 /* ==================== HIDE PAST INCIDENTS (NOT CUSTOMER-FRIENDLY) ==================== */
-section:has(h2:contains("Past Incidents")),
-h2:contains("Past Incidents"),
-[class*="past"],
+/* Hide all h3 date headings and incident content */
+h3,
 section > h3,
-section > article {
+section > article,
+[class*="past"],
+[class*="incident"],
+.incident {
   display: none !important;
 }
 
-/* Hide any incident-related content */
-.incident,
-[class*="incident"],
-h2 + section,
-main > section:last-of-type {
+/* Hide sections after the status banner that contain incidents */
+main > section:nth-child(n+5) {
   display: none !important;
 }
 
