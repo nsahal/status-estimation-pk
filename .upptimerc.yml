@@ -23,14 +23,9 @@ sites:
       - 200
       - 503  # Allow degraded status
     
-  - name: API Calculate Quote
-    url: https://api.estimation.pk/api/v1/calculate-quote
-    method: POST
-    headers:
-      - "Content-Type: application/json"
-    body: '{"boxType":"tuck-top-snap-lock","length":4,"width":3,"height":2,"material":"cardboard","gsm":300,"printing":{"cmyk":1,"pantone":0,"metallic":0},"insidePrinting":{"cmyk":0,"pantone":0,"metallic":0},"quantity":100,"features":[],"featureAreas":{},"vendorProfit":20,"shippingOption":"standard","shippingCountry":"USA"}'
-    expectedStatusCodes:
-      - 200
+  # Removed: API Calculate Quote endpoint requires authentication
+  # Cannot be monitored without valid user token
+  # Use API Health Check instead for general API availability
     
   - name: Database Health
     url: https://api.estimation.pk/health/database
@@ -39,12 +34,8 @@ sites:
       - 200
       - 503
     
-  - name: Authentication Service
-    url: https://api.estimation.pk/health/auth
-    method: GET
-    expectedStatusCodes:
-      - 200
-      - 503
+  # Removed: /health/auth endpoint doesn't exist in the API
+  # Authentication is checked implicitly through other endpoints
 
 status-website:
   # Add your custom domain here
