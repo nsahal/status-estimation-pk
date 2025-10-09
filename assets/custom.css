@@ -285,14 +285,19 @@ section svg + div {
 h3,
 section > h3,
 section > article,
-[class*="past"],
 [class*="incident"],
 .incident {
   display: none !important;
 }
 
-/* Hide sections after the status banner that contain incidents */
-main > section:nth-child(n+5) {
+/* Show the live-status section but hide incidents */
+section.live-status {
+  display: block !important;
+}
+
+/* Hide only the last sections that contain past incidents */
+main > section:last-child,
+main > section:nth-last-child(2) {
   display: none !important;
 }
 
