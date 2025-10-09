@@ -129,13 +129,9 @@ section:first-of-type::before {
   font-size: 0.875rem !important;
 }
 
-/* ==================== LIVE STATUS HEADING ==================== */
-.live-status,
+/* ==================== HIDE LIVE STATUS HEADING ==================== */
 h2 {
-  font-size: 1.5rem !important;
-  font-weight: 700 !important;
-  color: #111827 !important;
-  margin: 2.5rem 0 1.5rem !important;
+  display: none !important;
 }
 
 /* ==================== TIME FILTER BUTTONS ==================== */
@@ -170,137 +166,135 @@ form label:hover {
   border-color: #059669 !important;
 }
 
-/* ==================== SERVICE CARDS ==================== */
-section[class*="live-status"] > div,
+/* ==================== SERVICE CARDS - OPENSTATUS STYLE ==================== */
+section[class*="live-status"] > a,
 .monitor,
-.site,
-article {
+.site {
   background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  border-radius: 0.5rem !important;
-  padding: 1.25rem !important;
-  margin-bottom: 0.75rem !important;
-  transition: border-color 0.2s !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 1.5rem 0 !important;
+  margin-bottom: 0 !important;
+  border-bottom: 1px solid #e5e7eb !important;
+  transition: background-color 0.15s !important;
+  display: block !important;
+  text-decoration: none !important;
+  cursor: pointer !important;
 }
 
-section[class*="live-status"] > div:hover,
+section[class*="live-status"] > a:hover,
 .monitor:hover,
 .site:hover {
-  border-color: #cbd5e0 !important;
+  background-color: #f9fafb !important;
 }
 
-/* Service name/title */
+/* Service header row with name and percentage */
+section[class*="live-status"] > a > div:first-child,
+.monitor > div:first-child,
+.site > div:first-child {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  margin-bottom: 0.75rem !important;
+}
+
+/* Service name */
 h4,
 .monitor h3,
 .site h3 {
   font-size: 1rem !important;
   font-weight: 600 !important;
   color: #111827 !important;
-  margin-bottom: 0.75rem !important;
-  display: flex !important;
+  margin: 0 !important;
+  display: inline-flex !important;
   align-items: center !important;
-  gap: 0.5rem !important;
+  gap: 0.375rem !important;
 }
 
-/* Operational icon */
+/* Remove the dot - we'll show status via bar colors */
 h4::before,
 .monitor h3::before,
 .site h3::before {
-  content: "" !important;
-  display: inline-block !important;
-  width: 8px !important;
-  height: 8px !important;
-  border-radius: 50% !important;
-  background: #10b981 !important;
+  display: none !important;
 }
 
-/* Down status */
-.down h4::before,
-.down h3::before,
-[class*="down"]::before {
-  background: #ef4444 !important;
-}
-
-/* ==================== UPTIME STATS ==================== */
+/* Uptime percentage on the right */
 .uptime,
 .percentage {
   font-size: 0.875rem !important;
   color: #6b7280 !important;
-  margin: 0.5rem 0 !important;
-}
-
-.uptime strong,
-.percentage strong {
-  color: #111827 !important;
   font-weight: 600 !important;
+  margin: 0 !important;
 }
 
-/* Response time */
-[class*="response"] {
-  font-size: 0.875rem !important;
-  color: #6b7280 !important;
+/* Hide "Overall uptime:" text, just show the number */
+.uptime::before,
+.percentage::before {
+  content: none !important;
 }
 
-/* ==================== UPTIME GRAPH BARS ==================== */
-.monitor svg,
-.site svg,
-section svg {
-  margin-top: 0.75rem !important;
-}
-
-svg [class*="bar"],
-svg rect {
-  fill: #10b981 !important;
-  rx: 2 !important;
-}
-
-svg [class*="down"] rect,
-svg .down {
-  fill: #ef4444 !important;
-}
-
-svg [class*="degraded"] rect {
-  fill: #f59e0b !important;
-}
-
-/* ==================== PAST INCIDENTS ==================== */
-h3 {
-  font-size: 1.125rem !important;
-  font-weight: 600 !important;
-  color: #111827 !important;
-  margin: 2rem 0 1rem !important;
-}
-
-.incident,
-[class*="incident"] {
-  background: #ffffff !important;
-  border: 1px solid #e5e7eb !important;
-  border-left: 3px solid #ef4444 !important;
-  border-radius: 0.375rem !important;
-  padding: 1rem !important;
-  margin-bottom: 0.75rem !important;
-}
-
-.incident h4 {
-  font-size: 0.875rem !important;
-  font-weight: 600 !important;
-  color: #111827 !important;
-  margin-bottom: 0.25rem !important;
-}
-
-.incident h4::before {
+/* Response time - hide it for cleaner look like OpenStatus */
+[class*="response"],
+.response-time {
   display: none !important;
 }
 
-.incident p {
-  font-size: 0.875rem !important;
-  color: #6b7280 !important;
+/* ==================== UPTIME BARS - BEAUTIFUL ROUNDED STYLE ==================== */
+.monitor svg,
+.site svg,
+section svg {
+  margin-top: 0.5rem !important;
+  height: 48px !important;
+  width: 100% !important;
 }
 
-.incident.resolved,
-[class*="resolved"] {
-  border-left-color: #10b981 !important;
-  opacity: 0.7 !important;
+/* Individual bars - make them rounded and spaced */
+svg rect,
+svg [class*="bar"] {
+  fill: #10b981 !important;
+  rx: 3 !important;
+  ry: 3 !important;
+  opacity: 1 !important;
+}
+
+/* Down status bars */
+svg rect[class*="down"],
+svg .down rect {
+  fill: #ef4444 !important;
+}
+
+/* Degraded status bars */
+svg rect[class*="degraded"],
+svg .degraded rect {
+  fill: #f59e0b !important;
+}
+
+/* Time labels under bars */
+.monitor svg + div,
+.site svg + div,
+section svg + div {
+  display: flex !important;
+  justify-content: space-between !important;
+  margin-top: 0.5rem !important;
+  font-size: 0.75rem !important;
+  color: #9ca3af !important;
+}
+
+/* ==================== HIDE PAST INCIDENTS (NOT CUSTOMER-FRIENDLY) ==================== */
+section:has(h2:contains("Past Incidents")),
+h2:contains("Past Incidents"),
+[class*="past"],
+section > h3,
+section > article {
+  display: none !important;
+}
+
+/* Hide any incident-related content */
+.incident,
+[class*="incident"],
+h2 + section,
+main > section:last-of-type {
+  display: none !important;
 }
 
 /* ==================== LINKS ==================== */
