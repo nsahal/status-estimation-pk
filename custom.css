@@ -167,6 +167,7 @@ form label:hover {
 }
 
 /* ==================== SERVICE CARDS - OPENSTATUS STYLE ==================== */
+section[class*="live-status"] > article,
 section[class*="live-status"] > a,
 .monitor,
 .site {
@@ -182,13 +183,20 @@ section[class*="live-status"] > a,
   cursor: pointer !important;
 }
 
+section[class*="live-status"] > article:hover,
 section[class*="live-status"] > a:hover,
 .monitor:hover,
 .site:hover {
   background-color: #f9fafb !important;
 }
 
-/* Service header row with name and percentage */
+/* Don't hide articles with .down class in live-status section */
+section.live-status article.down {
+  display: block !important;
+}
+
+/* Service header with name */
+section[class*="live-status"] article h4,
 section[class*="live-status"] > a > div:first-child,
 .monitor > div:first-child,
 .site > div:first-child {
@@ -239,45 +247,16 @@ h4::before,
   display: none !important;
 }
 
-/* ==================== UPTIME BARS - BEAUTIFUL ROUNDED STYLE ==================== */
-.monitor svg,
-.site svg,
-section svg {
-  margin-top: 0.5rem !important;
+/* ==================== UPTIME GRAPH BACKGROUND IMAGES ==================== */
+/* Upptime uses PNG background images for graphs */
+article.graph::after {
+  content: "" !important;
+  display: block !important;
   height: 48px !important;
   width: 100% !important;
-}
-
-/* Individual bars - make them rounded and spaced */
-svg rect,
-svg [class*="bar"] {
-  fill: #10b981 !important;
-  rx: 3 !important;
-  ry: 3 !important;
-  opacity: 1 !important;
-}
-
-/* Down status bars */
-svg rect[class*="down"],
-svg .down rect {
-  fill: #ef4444 !important;
-}
-
-/* Degraded status bars */
-svg rect[class*="degraded"],
-svg .degraded rect {
-  fill: #f59e0b !important;
-}
-
-/* Time labels under bars */
-.monitor svg + div,
-.site svg + div,
-section svg + div {
-  display: flex !important;
-  justify-content: space-between !important;
-  margin-top: 0.5rem !important;
-  font-size: 0.75rem !important;
-  color: #9ca3af !important;
+  margin-top: 0.75rem !important;
+  background: var(--background) center/contain no-repeat !important;
+  border-radius: 4px !important;
 }
 
 /* ==================== HIDE PAST INCIDENTS (NOT CUSTOMER-FRIENDLY) ==================== */
