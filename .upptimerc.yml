@@ -59,8 +59,8 @@ status-website:
   # Custom theme settings
   theme: dark
   
-  # Custom CSS
-  customCSS: /assets/custom.css
+  # Custom CSS (must be full URL after GitHub Pages builds it)
+  customCSS: https://status.estimation.pk/assets/custom.css
   
   # Remove Upptime branding
   skipPoweredByUpptime: true
