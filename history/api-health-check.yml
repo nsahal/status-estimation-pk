@@ -1,7 +1,7 @@
 url: https://api.estimation.pk/health
 status: up
-code: 503
-responseTime: 722
-lastUpdated: 2025-10-16T23:09:37.365Z
+code: 200
+responseTime: 1355
+lastUpdated: 2025-10-17T23:09:11.098Z
 startTime: 2025-10-01T06:12:17.366Z
 generator: Upptime <https://github.com/upptime/upptime>
