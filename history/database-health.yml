@@ -1,7 +1,7 @@
 url: https://api.estimation.pk/health/database
 status: up
-code: 503
-responseTime: 308
-lastUpdated: 2025-12-10T23:09:15.803Z
+code: 200
+responseTime: 316
+lastUpdated: 2025-12-11T23:10:49.990Z
 startTime: 2025-10-01T06:12:23.656Z
 generator: Upptime <https://github.com/upptime/upptime>
