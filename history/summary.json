@@ -50,7 +50,7 @@
     "slug": "api-health-check",
     "status": "down",
     "uptime": "99.39%",
-    "uptimeDay": "100.00%",
+    "uptimeDay": "99.98%",
     "uptimeWeek": "100.00%",
     "uptimeMonth": "100.00%",
     "uptimeYear": "99.39%",
@@ -60,6 +60,7 @@
     "timeMonth": 898,
     "timeYear": 995,
     "dailyMinutesDown": {
+      "2026-02-07": 0,
       "2025-12-06": 18,
       "2025-10-16": 19,
       "2025-10-09": 81,
